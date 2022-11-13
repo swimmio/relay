@@ -44,7 +44,7 @@ pub enum ProjectError {
 
 impl ResponseError for ProjectError {}
 
-pub struct ProjectCache {
+pub struct GlobalCache {
     config: Arc<Config>,
     projects: hashbrown::HashMap<ProjectKey, Project>, // need hashbrown because drain_filter is not stable in std yet
     local_source: Addr<LocalProjectSource>,
